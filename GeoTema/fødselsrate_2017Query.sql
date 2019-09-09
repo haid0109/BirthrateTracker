@@ -1,0 +1,51 @@
+﻿USE master
+GO
+
+CREATE DATABASE fødselsrate_2017
+GO
+
+USE fødselsrate_2017
+GO
+
+CREATE TABLE Africa 
+(
+	Land NVARCHAR(50) PRIMARY KEY,
+	Fødselsrate FLOAT NOT NULL,
+)
+
+CREATE TABLE Asien 
+(
+	Land NVARCHAR(50) PRIMARY KEY,
+	Fødselsrate FLOAT NOT NULL,
+)
+
+CREATE TABLE Europa
+(
+	Land NVARCHAR(50) PRIMARY KEY,
+	Fødselsrate FLOAT NOT NULL,
+)
+
+CREATE TABLE Mellemamerika 
+(
+	Land NVARCHAR(50) PRIMARY KEY,
+	Fødselsrate FLOAT NOT NULL,
+)
+
+CREATE TABLE Nordamerika 
+(
+	Land NVARCHAR(50) PRIMARY KEY,
+	Fødselsrate FLOAT NOT NULL,
+)
+
+CREATE TABLE Oceanien
+(
+	Land NVARCHAR(50) PRIMARY KEY,
+	Fødselsrate FLOAT NOT NULL,
+)
+
+CREATE TABLE Sydamerika
+(
+	Land NVARCHAR(50) PRIMARY KEY,
+	Fødselsrate FLOAT NOT NULL,
+)
+GO

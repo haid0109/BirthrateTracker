@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.489
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeoTema", "GeoTema\GeoTema.csproj", "{9937A75E-914F-43C7-A000-FC0DC4AFAC85}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9937A75E-914F-43C7-A000-FC0DC4AFAC85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9937A75E-914F-43C7-A000-FC0DC4AFAC85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9937A75E-914F-43C7-A000-FC0DC4AFAC85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9937A75E-914F-43C7-A000-FC0DC4AFAC85}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {754D0F0D-F20C-4C00-8E27-7FA77D1E1741}
+	EndGlobalSection
+EndGlobal
