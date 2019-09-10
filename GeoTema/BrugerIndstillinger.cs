@@ -25,7 +25,7 @@ namespace GeoTema
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e) { }
 
-        SqlConnection Con_UsersDB = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\UsersDB.mdf;Integrated Security=True");
+        SqlConnection Con_UsersDB = new SqlConnection("Server = 10.0.5.111; Database = UsersDB; User Id = sa; Password = Passw0rd; ");
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -35,7 +35,9 @@ namespace GeoTema
                 Con_UsersDB.Open();
                 SqlDataAdapter SqlDA = new SqlDataAdapter();
 
-                SqlDA = new SqlDataAdapter("SELECT * FROM Users ORDER BY Usertype ASC, Username Asc", Con_UsersDB);
+                if (comboBox1.SelectedIndex == 0) { SqlDA = new SqlDataAdapter("SELECT * FROM Users WHERE Usertype = 'Bruger' ORDER BY Username ASC", Con_UsersDB); } //if you selected "Bruger" in the usertype drop down menu, then all users with the usertype "Bruger" will be selected and ordered by ascending usernames
+                if (comboBox1.SelectedIndex == 1) { SqlDA = new SqlDataAdapter("SELECT * FROM Users WHERE Usertype = 'Superbruger' ORDER BY Username ASC", Con_UsersDB); }
+                if (comboBox1.SelectedIndex == 2) { SqlDA = new SqlDataAdapter("SELECT * FROM Users WHERE Usertype = 'Administrator' ORDER BY Username ASC", Con_UsersDB); }
 
                 DataTable DT = new DataTable();
                 SqlDA.Fill(DT);
@@ -53,11 +55,11 @@ namespace GeoTema
                 Con_UsersDB.Open();
                 SqlCommand SqlCmd = new SqlCommand();
 
-                if (comboBox1.SelectedIndex == 0) { SqlCmd = new SqlCommand("INSERT INTO Users(Username, [Password], Usertype) VALUES(@Username, @Password, 'Bruger');", Con_UsersDB); }
+                if (comboBox1.SelectedIndex == 0) { SqlCmd = new SqlCommand("INSERT INTO Users(Username, [Password], Usertype) VALUES(@Username, @Password, 'Bruger');", Con_UsersDB); } //if you selected "Bruger" in the usertype drop down menu, then an insert query without values, will be saved in "SqlCmd"
                 if (comboBox1.SelectedIndex == 1) { SqlCmd = new SqlCommand("INSERT INTO Users(Username, [Password], Usertype) VALUES(@Username, @Password, 'Superbruger');", Con_UsersDB); }
                 if (comboBox1.SelectedIndex == 2) { SqlCmd = new SqlCommand("INSERT INTO Users(Username, [Password], Usertype) VALUES(@Username, @Password, 'Administrator');", Con_UsersDB); }
 
-                SqlCmd.Parameters.Add("@Username", textBox1.Text);
+                SqlCmd.Parameters.Add("@Username", textBox1.Text); //inserts the inputted data from the "Brugernavn" box, into the query
                 SqlCmd.Parameters.Add("@Password", textBox2.Text);
 
                 object obj = SqlCmd.ExecuteNonQuery();
@@ -77,7 +79,7 @@ namespace GeoTema
                 Con_UsersDB.Open();
                 SqlCommand SqlCmd = new SqlCommand();
 
-                SqlCmd = new SqlCommand("UPDATE Users SET [Password] = @NewPassword WHERE Username = @Username;", Con_UsersDB);
+                SqlCmd = new SqlCommand("UPDATE Users SET [Password] = @NewPassword WHERE Username = @Username;", Con_UsersDB); //scans through the database and updates the password that matches with the username inputted
 
                 SqlCmd.Parameters.Add("@Username", textBox3.Text);
                 SqlCmd.Parameters.Add("@NewPassword", textBox4.Text);

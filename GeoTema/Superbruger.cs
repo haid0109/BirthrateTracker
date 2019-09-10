@@ -59,7 +59,7 @@ namespace GeoTema
                 Con_fødselsrate_2017.Open();
                 SqlCommand SqlCmd = new SqlCommand();
 
-                if (comboBox1.SelectedIndex == 0) { SqlCmd = new SqlCommand("INSERT INTO Africa(Land, Fødselsrate) VALUES (@Land, @Fødselsrate);", Con_fødselsrate_2017); }
+                if (comboBox1.SelectedIndex == 0) { SqlCmd = new SqlCommand("INSERT INTO Africa(Land, Fødselsrate) VALUES (@Land, @Fødselsrate);", Con_fødselsrate_2017); } //if you selected "Africa" in the drop down menu, then an insert query without values, will be saved in "SqlCmd"
                 if (comboBox1.SelectedIndex == 1) { SqlCmd = new SqlCommand("INSERT INTO Asien(Land, Fødselsrate) VALUES (@Land, @Fødselsrate);", Con_fødselsrate_2017); }
                 if (comboBox1.SelectedIndex == 2) { SqlCmd = new SqlCommand("INSERT INTO Europa(Land, Fødselsrate) VALUES (@Land, @Fødselsrate);", Con_fødselsrate_2017); }
                 if (comboBox1.SelectedIndex == 3) { SqlCmd = new SqlCommand("INSERT INTO Mellemamerika(Land, Fødselsrate) VALUES (@Land, @Fødselsrate);", Con_fødselsrate_2017); }
@@ -67,13 +67,13 @@ namespace GeoTema
                 if (comboBox1.SelectedIndex == 5) { SqlCmd = new SqlCommand("INSERT INTO Oceanien(Land, Fødselsrate) VALUES (@Land, @Fødselsrate);", Con_fødselsrate_2017); }
                 if (comboBox1.SelectedIndex == 6) { SqlCmd = new SqlCommand("INSERT INTO Sydamerika(Land, Fødselsrate) VALUES (@Land, @Fødselsrate);", Con_fødselsrate_2017); }
 
-                SqlCmd.Parameters.Add("@Land", textBox1.Text);
+                SqlCmd.Parameters.Add("@Land", textBox1.Text); //inserts the inputted data from the "Land" box, into the query
                 SqlCmd.Parameters.Add("@Fødselsrate", textBox2.Text);
 
-                object obj = SqlCmd.ExecuteNonQuery();
-                textBox1.Clear();
+                object obj = SqlCmd.ExecuteNonQuery(); //executes the query
+                textBox1.Clear(); //clears the "Land" text box 
                 textBox2.Clear();
-                MessageBox.Show("Data has been submitted");
+                MessageBox.Show("Data has been submitted"); //gives a confirmation that the data has been submitted
                 Con_fødselsrate_2017.Close();
             }
             catch (Exception exc) { MessageBox.Show(exc.Message); }

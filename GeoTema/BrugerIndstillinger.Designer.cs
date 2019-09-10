@@ -94,13 +94,9 @@
             // 
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
-            "Africa",
-            "Asien",
-            "Europa",
-            "Mellemamerika",
-            "Nordamerika",
-            "Oceanien",
-            "Sydamerika"});
+            "Bruger",
+            "Superbruger",
+            "Administrator"});
             this.comboBox1.Location = new System.Drawing.Point(12, 13);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(707, 21);

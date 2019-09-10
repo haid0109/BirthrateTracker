@@ -80,7 +80,7 @@ namespace GeoTema
             catch (Exception exc) { MessageBox.Show(exc.Message); }
         }
 
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) //makes the "Brugerindstillinger.cs" window pop up, if you click the blue "Brugerinstillinger" link
         {
             BrugerIndstillinger Bruger_Indstillinger = new BrugerIndstillinger();
             Bruger_Indstillinger.Show();
