@@ -379,7 +379,7 @@ namespace GeoTema {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public UsersRow AddUsersRow(string Username, int Password, string Usertype) {
+            public UsersRow AddUsersRow(string Username, string Password, string Usertype) {
                 UsersRow rowUsersRow = ((UsersRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Username,
@@ -424,7 +424,7 @@ namespace GeoTema {
             private void InitClass() {
                 this.columnUsername = new global::System.Data.DataColumn("Username", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnUsername);
-                this.columnPassword = new global::System.Data.DataColumn("Password", typeof(int), null, global::System.Data.MappingType.Element);
+                this.columnPassword = new global::System.Data.DataColumn("Password", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPassword);
                 this.columnUsertype = new global::System.Data.DataColumn("Usertype", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnUsertype);
@@ -434,6 +434,7 @@ namespace GeoTema {
                 this.columnUsername.Unique = true;
                 this.columnUsername.MaxLength = 50;
                 this.columnPassword.AllowDBNull = false;
+                this.columnPassword.MaxLength = 50;
                 this.columnUsertype.AllowDBNull = false;
                 this.columnUsertype.MaxLength = 50;
             }
@@ -589,9 +590,9 @@ namespace GeoTema {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int Password {
+            public string Password {
                 get {
-                    return ((int)(this[this.tableUsers.PasswordColumn]));
+                    return ((string)(this[this.tableUsers.PasswordColumn]));
                 }
                 set {
                     this[this.tableUsers.PasswordColumn] = value;
@@ -779,7 +780,7 @@ namespace GeoTema.UsersDBDataSetTableAdapters {
                 "] = @Original_Password) AND ([Usertype] = @Original_Usertype))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Username", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Username", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Password", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Password", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Password", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Password", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Usertype", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Usertype", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
@@ -788,7 +789,7 @@ namespace GeoTema.UsersDBDataSetTableAdapters {
                 "sername = @Username)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Username", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Username", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Password", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Password", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Password", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Password", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Usertype", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Usertype", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
@@ -796,10 +797,10 @@ namespace GeoTema.UsersDBDataSetTableAdapters {
 SELECT Username, Password, Usertype FROM Users WHERE (Username = @Username)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Username", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Username", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Password", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Password", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Password", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Password", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Usertype", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Usertype", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Username", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Username", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Password", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Password", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Password", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Password", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Usertype", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Usertype", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
@@ -807,7 +808,7 @@ SELECT Username, Password, Usertype FROM Users WHERE (Username = @Username)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::GeoTema.Properties.Settings.Default.UsersDBConnectionString;
+            this._connection.ConnectionString = global::GeoTema.Properties.Settings.Default.UsersDBConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -877,14 +878,19 @@ SELECT Username, Password, Usertype FROM Users WHERE (Username = @Username)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(string Original_Username, int Original_Password, string Original_Usertype) {
+        public virtual int Delete(string Original_Username, string Original_Password, string Original_Usertype) {
             if ((Original_Username == null)) {
                 throw new global::System.ArgumentNullException("Original_Username");
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[0].Value = ((string)(Original_Username));
             }
-            this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_Password));
+            if ((Original_Password == null)) {
+                throw new global::System.ArgumentNullException("Original_Password");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_Password));
+            }
             if ((Original_Usertype == null)) {
                 throw new global::System.ArgumentNullException("Original_Usertype");
             }
@@ -911,14 +917,19 @@ SELECT Username, Password, Usertype FROM Users WHERE (Username = @Username)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Username, int Password, string Usertype) {
+        public virtual int Insert(string Username, string Password, string Usertype) {
             if ((Username == null)) {
                 throw new global::System.ArgumentNullException("Username");
             }
             else {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Username));
             }
-            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(Password));
+            if ((Password == null)) {
+                throw new global::System.ArgumentNullException("Password");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Password));
+            }
             if ((Usertype == null)) {
                 throw new global::System.ArgumentNullException("Usertype");
             }
@@ -945,14 +956,19 @@ SELECT Username, Password, Usertype FROM Users WHERE (Username = @Username)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Username, int Password, string Usertype, string Original_Username, int Original_Password, string Original_Usertype) {
+        public virtual int Update(string Username, string Password, string Usertype, string Original_Username, string Original_Password, string Original_Usertype) {
             if ((Username == null)) {
                 throw new global::System.ArgumentNullException("Username");
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Username));
             }
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(Password));
+            if ((Password == null)) {
+                throw new global::System.ArgumentNullException("Password");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Password));
+            }
             if ((Usertype == null)) {
                 throw new global::System.ArgumentNullException("Usertype");
             }
@@ -965,7 +981,12 @@ SELECT Username, Password, Usertype FROM Users WHERE (Username = @Username)";
             else {
                 this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Original_Username));
             }
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_Password));
+            if ((Original_Password == null)) {
+                throw new global::System.ArgumentNullException("Original_Password");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Original_Password));
+            }
             if ((Original_Usertype == null)) {
                 throw new global::System.ArgumentNullException("Original_Usertype");
             }
@@ -992,7 +1013,7 @@ SELECT Username, Password, Usertype FROM Users WHERE (Username = @Username)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int Password, string Usertype, string Original_Username, int Original_Password, string Original_Usertype) {
+        public virtual int Update(string Password, string Usertype, string Original_Username, string Original_Password, string Original_Usertype) {
             return this.Update(Original_Username, Password, Usertype, Original_Username, Original_Password, Original_Usertype);
         }
     }

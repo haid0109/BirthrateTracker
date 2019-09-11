@@ -3055,7 +3055,7 @@ namespace GeoTema.fødselsrate_2017DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::GeoTema.Properties.Settings.Default.fødselsrate_2017ConnectionString;
+            this._connection.ConnectionString = global::GeoTema.Properties.Settings.Default.fødselsrate_2017ConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3375,7 +3375,7 @@ namespace GeoTema.fødselsrate_2017DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::GeoTema.Properties.Settings.Default.fødselsrate_2017ConnectionString;
+            this._connection.ConnectionString = global::GeoTema.Properties.Settings.Default.fødselsrate_2017ConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3695,7 +3695,7 @@ namespace GeoTema.fødselsrate_2017DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::GeoTema.Properties.Settings.Default.fødselsrate_2017ConnectionString;
+            this._connection.ConnectionString = global::GeoTema.Properties.Settings.Default.fødselsrate_2017ConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4015,7 +4015,7 @@ namespace GeoTema.fødselsrate_2017DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::GeoTema.Properties.Settings.Default.fødselsrate_2017ConnectionString;
+            this._connection.ConnectionString = global::GeoTema.Properties.Settings.Default.fødselsrate_2017ConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4335,7 +4335,7 @@ namespace GeoTema.fødselsrate_2017DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::GeoTema.Properties.Settings.Default.fødselsrate_2017ConnectionString;
+            this._connection.ConnectionString = global::GeoTema.Properties.Settings.Default.fødselsrate_2017ConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4655,7 +4655,7 @@ namespace GeoTema.fødselsrate_2017DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::GeoTema.Properties.Settings.Default.fødselsrate_2017ConnectionString;
+            this._connection.ConnectionString = global::GeoTema.Properties.Settings.Default.fødselsrate_2017ConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4975,7 +4975,7 @@ namespace GeoTema.fødselsrate_2017DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::GeoTema.Properties.Settings.Default.fødselsrate_2017ConnectionString;
+            this._connection.ConnectionString = global::GeoTema.Properties.Settings.Default.fødselsrate_2017ConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

@@ -25,7 +25,7 @@ namespace GeoTema
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e) { }
 
-        SqlConnection Con_UsersDB = new SqlConnection("Server = 10.0.5.111; Database = UsersDB; User Id = sa; Password = Passw0rd; ");
+        SqlConnection Con_UsersDB = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\OneDrive - TEC\2.EUX\5.PF2\Opgave 3(C# + Database)\GeoTema_project\GeoTema\GeoTema\UsersDB.mdf;Integrated Security=True;Connect Timeout=30");
 
         private void button1_Click(object sender, EventArgs e)
         {

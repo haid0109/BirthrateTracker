@@ -28,7 +28,7 @@ namespace GeoTema
         {
                 try //tests the code for any errors
                 {
-                    SqlConnection Con = new SqlConnection("Server = 10.0.5.111; Database = UsersDB; User Id = sa; Password = Passw0rd;");
+                    SqlConnection Con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\OneDrive - TEC\2.EUX\5.PF2\Opgave 3(C# + Database)\GeoTema_project\GeoTema\GeoTema\UsersDB.mdf;Integrated Security=True;Connect Timeout=30");
                     SqlCommand SqlCmd = new SqlCommand("select * from Users where Username = '" + textBox1.Text + "' and [Password]='" + textBox2.Text + "'", Con); //selects all database entries that match the username and password entered
                     SqlDataAdapter SqlDA = new SqlDataAdapter(SqlCmd);
                     DataTable DT = new DataTable();

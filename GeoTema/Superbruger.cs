@@ -25,7 +25,7 @@ namespace GeoTema
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e) { }
 
-        SqlConnection Con_fødselsrate_2017 = new SqlConnection("Server = 10.0.5.111; Database = fødselsrate_2017; User Id = sa; Password = Passw0rd; ");
+        SqlConnection Con_fødselsrate_2017 = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\OneDrive - TEC\2.EUX\5.PF2\Opgave 3(C# + Database)\GeoTema_project\GeoTema\GeoTema\fødselsrate_2017.mdf;Integrated Security=True");
 
         private void button1_Click(object sender, EventArgs e)
         {
