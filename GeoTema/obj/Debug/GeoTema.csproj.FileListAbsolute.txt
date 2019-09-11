@@ -44,3 +44,21 @@ D:\OneDrive - TEC\2.EUX\5.PF2\Opgave 3(C# + Database)\GeoTema_project\GeoTema\Ge
 D:\OneDrive - TEC\2.EUX\5.PF2\Opgave 3(C# + Database)\GeoTema_project\GeoTema\GeoTema\obj\Debug\GeoTema.pdb
 D:\OneDrive - TEC\2.EUX\5.PF2\Opgave 3(C# + Database)\GeoTema_project\GeoTema\GeoTema\bin\Debug\fødselsrate_2017.mdf
 D:\OneDrive - TEC\2.EUX\5.PF2\Opgave 3(C# + Database)\GeoTema_project\GeoTema\GeoTema\bin\Debug\fødselsrate_2017_log.ldf
+C:\Users\Haidar\Documents\GitHub\BirthrateTracker\GeoTema\bin\Debug\fødselsrate_2017.mdf
+C:\Users\Haidar\Documents\GitHub\BirthrateTracker\GeoTema\bin\Debug\fødselsrate_2017_log.ldf
+C:\Users\Haidar\Documents\GitHub\BirthrateTracker\GeoTema\bin\Debug\UsersDB.mdf
+C:\Users\Haidar\Documents\GitHub\BirthrateTracker\GeoTema\bin\Debug\UsersDB_log.ldf
+C:\Users\Haidar\Documents\GitHub\BirthrateTracker\GeoTema\bin\Debug\GeoTema.exe.config
+C:\Users\Haidar\Documents\GitHub\BirthrateTracker\GeoTema\bin\Debug\GeoTema.exe
+C:\Users\Haidar\Documents\GitHub\BirthrateTracker\GeoTema\bin\Debug\GeoTema.pdb
+C:\Users\Haidar\Documents\GitHub\BirthrateTracker\GeoTema\obj\Debug\GeoTema.csprojAssemblyReference.cache
+C:\Users\Haidar\Documents\GitHub\BirthrateTracker\GeoTema\obj\Debug\GeoTema.Bruger.resources
+C:\Users\Haidar\Documents\GitHub\BirthrateTracker\GeoTema\obj\Debug\GeoTema.BrugerIndstillinger.resources
+C:\Users\Haidar\Documents\GitHub\BirthrateTracker\GeoTema\obj\Debug\GeoTema.Superbruger.resources
+C:\Users\Haidar\Documents\GitHub\BirthrateTracker\GeoTema\obj\Debug\GeoTema.Administrator.resources
+C:\Users\Haidar\Documents\GitHub\BirthrateTracker\GeoTema\obj\Debug\GeoTema.Login.resources
+C:\Users\Haidar\Documents\GitHub\BirthrateTracker\GeoTema\obj\Debug\GeoTema.Properties.Resources.resources
+C:\Users\Haidar\Documents\GitHub\BirthrateTracker\GeoTema\obj\Debug\GeoTema.csproj.GenerateResource.cache
+C:\Users\Haidar\Documents\GitHub\BirthrateTracker\GeoTema\obj\Debug\GeoTema.csproj.CoreCompileInputs.cache
+C:\Users\Haidar\Documents\GitHub\BirthrateTracker\GeoTema\obj\Debug\GeoTema.exe
+C:\Users\Haidar\Documents\GitHub\BirthrateTracker\GeoTema\obj\Debug\GeoTema.pdb
