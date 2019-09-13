@@ -44,10 +44,6 @@ D:\OneDrive - TEC\2.EUX\5.PF2\Opgave 3(C# + Database)\GeoTema_project\GeoTema\Ge
 D:\OneDrive - TEC\2.EUX\5.PF2\Opgave 3(C# + Database)\GeoTema_project\GeoTema\GeoTema\obj\Debug\GeoTema.pdb
 D:\OneDrive - TEC\2.EUX\5.PF2\Opgave 3(C# + Database)\GeoTema_project\GeoTema\GeoTema\bin\Debug\fødselsrate_2017.mdf
 D:\OneDrive - TEC\2.EUX\5.PF2\Opgave 3(C# + Database)\GeoTema_project\GeoTema\GeoTema\bin\Debug\fødselsrate_2017_log.ldf
-C:\Users\Haidar\Documents\GitHub\BirthrateTracker\GeoTema\bin\Debug\fødselsrate_2017.mdf
-C:\Users\Haidar\Documents\GitHub\BirthrateTracker\GeoTema\bin\Debug\fødselsrate_2017_log.ldf
-C:\Users\Haidar\Documents\GitHub\BirthrateTracker\GeoTema\bin\Debug\UsersDB.mdf
-C:\Users\Haidar\Documents\GitHub\BirthrateTracker\GeoTema\bin\Debug\UsersDB_log.ldf
 C:\Users\Haidar\Documents\GitHub\BirthrateTracker\GeoTema\bin\Debug\GeoTema.exe.config
 C:\Users\Haidar\Documents\GitHub\BirthrateTracker\GeoTema\bin\Debug\GeoTema.exe
 C:\Users\Haidar\Documents\GitHub\BirthrateTracker\GeoTema\bin\Debug\GeoTema.pdb
@@ -62,3 +58,7 @@ C:\Users\Haidar\Documents\GitHub\BirthrateTracker\GeoTema\obj\Debug\GeoTema.cspr
 C:\Users\Haidar\Documents\GitHub\BirthrateTracker\GeoTema\obj\Debug\GeoTema.csproj.CoreCompileInputs.cache
 C:\Users\Haidar\Documents\GitHub\BirthrateTracker\GeoTema\obj\Debug\GeoTema.exe
 C:\Users\Haidar\Documents\GitHub\BirthrateTracker\GeoTema\obj\Debug\GeoTema.pdb
+C:\Users\Haidar\Documents\GitHub\BirthrateTracker\GeoTema\bin\Debug\System.Data.SQLite.dll
+C:\Users\Haidar\Documents\GitHub\BirthrateTracker\GeoTema\bin\Debug\System.Data.SQLite.xml
+C:\Users\Haidar\Documents\GitHub\BirthrateTracker\GeoTema\bin\Debug\System.Data.SQLite.dll.config
+C:\Users\Haidar\Documents\GitHub\BirthrateTracker\GeoTema\obj\Debug\GeoTema.csproj.CopyComplete

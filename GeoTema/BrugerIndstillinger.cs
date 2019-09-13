@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
+using System.Data.SQLite;
 
 namespace GeoTema
 {
@@ -25,7 +25,7 @@ namespace GeoTema
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e) { }
 
-        SqlConnection Con_UsersDB = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\OneDrive - TEC\2.EUX\5.PF2\Opgave 3(C# + Database)\GeoTema_project\GeoTema\GeoTema\UsersDB.mdf;Integrated Security=True;Connect Timeout=30");
+        SQLiteConnection Con_UsersDB = new SQLiteConnection(@"Data Source=.\UsersDB.db;Version=3");
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -33,11 +33,11 @@ namespace GeoTema
             {
                 Con_UsersDB.Close();
                 Con_UsersDB.Open();
-                SqlDataAdapter SqlDA = new SqlDataAdapter();
+                SQLiteDataAdapter SqlDA = new SQLiteDataAdapter();
 
-                if (comboBox1.SelectedIndex == 0) { SqlDA = new SqlDataAdapter("SELECT * FROM Users WHERE Usertype = 'Bruger' ORDER BY Username ASC", Con_UsersDB); } //if you selected "Bruger" in the usertype drop down menu, then all users with the usertype "Bruger" will be selected and ordered by ascending usernames
-                if (comboBox1.SelectedIndex == 1) { SqlDA = new SqlDataAdapter("SELECT * FROM Users WHERE Usertype = 'Superbruger' ORDER BY Username ASC", Con_UsersDB); }
-                if (comboBox1.SelectedIndex == 2) { SqlDA = new SqlDataAdapter("SELECT * FROM Users WHERE Usertype = 'Administrator' ORDER BY Username ASC", Con_UsersDB); }
+                if (comboBox1.SelectedIndex == 0) { SqlDA = new SQLiteDataAdapter("SELECT * FROM Users WHERE Usertype = 'Bruger' ORDER BY Username ASC", Con_UsersDB); } //if you selected "Bruger" in the usertype drop down menu, then all users with the usertype "Bruger" will be selected and ordered by ascending usernames
+                if (comboBox1.SelectedIndex == 1) { SqlDA = new SQLiteDataAdapter("SELECT * FROM Users WHERE Usertype = 'Superbruger' ORDER BY Username ASC", Con_UsersDB); }
+                if (comboBox1.SelectedIndex == 2) { SqlDA = new SQLiteDataAdapter("SELECT * FROM Users WHERE Usertype = 'Administrator' ORDER BY Username ASC", Con_UsersDB); }
 
                 DataTable DT = new DataTable();
                 SqlDA.Fill(DT);
@@ -53,14 +53,11 @@ namespace GeoTema
             {
                 Con_UsersDB.Close();
                 Con_UsersDB.Open();
-                SqlCommand SqlCmd = new SqlCommand();
+                SQLiteCommand SqlCmd = new SQLiteCommand();
 
-                if (comboBox1.SelectedIndex == 0) { SqlCmd = new SqlCommand("INSERT INTO Users(Username, [Password], Usertype) VALUES(@Username, @Password, 'Bruger');", Con_UsersDB); } //if you selected "Bruger" in the usertype drop down menu, then an insert query without values, will be saved in "SqlCmd"
-                if (comboBox1.SelectedIndex == 1) { SqlCmd = new SqlCommand("INSERT INTO Users(Username, [Password], Usertype) VALUES(@Username, @Password, 'Superbruger');", Con_UsersDB); }
-                if (comboBox1.SelectedIndex == 2) { SqlCmd = new SqlCommand("INSERT INTO Users(Username, [Password], Usertype) VALUES(@Username, @Password, 'Administrator');", Con_UsersDB); }
-
-                SqlCmd.Parameters.Add("@Username", textBox1.Text); //inserts the inputted data from the "Brugernavn" box, into the query
-                SqlCmd.Parameters.Add("@Password", textBox2.Text);
+                if (comboBox1.SelectedIndex == 0) { SqlCmd = new SQLiteCommand("INSERT INTO Users(Username, [Password], Usertype) VALUES('" + textBox1.Text + "', '" + textBox2.Text + "', 'Bruger');", Con_UsersDB); } //if you selected "Bruger" in the usertype drop down menu, then an insert query without values, will be saved in "SqlCmd"
+                if (comboBox1.SelectedIndex == 1) { SqlCmd = new SQLiteCommand("INSERT INTO Users(Username, [Password], Usertype) VALUES('" + textBox1.Text + "', '" + textBox2.Text + "', 'Superbruger');", Con_UsersDB); }
+                if (comboBox1.SelectedIndex == 2) { SqlCmd = new SQLiteCommand("INSERT INTO Users(Username, [Password], Usertype) VALUES('" + textBox1.Text + "', '" + textBox2.Text + "', 'Administrator');", Con_UsersDB); }
 
                 object obj = SqlCmd.ExecuteNonQuery();
                 textBox1.Clear();
@@ -77,12 +74,9 @@ namespace GeoTema
             {
                 Con_UsersDB.Close();
                 Con_UsersDB.Open();
-                SqlCommand SqlCmd = new SqlCommand();
+                SQLiteCommand SqlCmd = new SQLiteCommand();
 
-                SqlCmd = new SqlCommand("UPDATE Users SET [Password] = @NewPassword WHERE Username = @Username;", Con_UsersDB); //scans through the database and updates the password that matches with the username inputted
-
-                SqlCmd.Parameters.Add("@Username", textBox3.Text);
-                SqlCmd.Parameters.Add("@NewPassword", textBox4.Text);
+                SqlCmd = new SQLiteCommand("UPDATE Users SET [Password] = '" + textBox4.Text + "' WHERE Username = '" + textBox3.Text + "';", Con_UsersDB); //scans through the database and updates the password that matches with the username inputted
 
                 object obj = SqlCmd.ExecuteNonQuery();
                 textBox1.Clear();

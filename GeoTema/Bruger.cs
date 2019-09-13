@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
+using System.Data.SQLite;
 
 namespace GeoTema
 {
@@ -25,7 +25,7 @@ namespace GeoTema
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e) { }
 
-        SqlConnection Con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\OneDrive - TEC\2.EUX\5.PF2\Opgave 3(C# + Database)\GeoTema_project\GeoTema\GeoTema\fødselsrate_2017.mdf;Integrated Security=True");
+        SQLiteConnection Con = new SQLiteConnection(@"Data Source=.\fødselsrate_2017.db;Version=3");
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -33,15 +33,15 @@ namespace GeoTema
             {
                 Con.Close(); //closes the connection to the database(for some reason, a non-skippable error occurs when i generate two consecutive errors, and the only fix i could find, is to close the connection before opening it)
                 Con.Open(); //opens the connection to the database
-                SqlDataAdapter SqlDA = new SqlDataAdapter();
+                SQLiteDataAdapter SqlDA = new SQLiteDataAdapter();
 
-                if (comboBox1.SelectedIndex == 0) { SqlDA = new SqlDataAdapter("SELECT *, RANK() OVER (ORDER BY Fødselsrate DESC) AS Rang FROM Africa", Con); } //if you selected "Africa" in the drop down menu, then all the entries in the "Africa" table will be selected, and ranked by descending birthrates
-                if (comboBox1.SelectedIndex == 1) { SqlDA = new SqlDataAdapter("SELECT *, RANK() OVER (ORDER BY Fødselsrate DESC) AS Rang FROM Asien", Con); }
-                if (comboBox1.SelectedIndex == 2) { SqlDA = new SqlDataAdapter("SELECT *, RANK() OVER (ORDER BY Fødselsrate DESC) AS Rang FROM Europa", Con); }
-                if (comboBox1.SelectedIndex == 3) { SqlDA = new SqlDataAdapter("SELECT *, RANK() OVER (ORDER BY Fødselsrate DESC) AS Rang FROM Mellemamerika", Con); }
-                if (comboBox1.SelectedIndex == 4) { SqlDA = new SqlDataAdapter("SELECT *, RANK() OVER (ORDER BY Fødselsrate DESC) AS Rang FROM Nordamerika", Con); }
-                if (comboBox1.SelectedIndex == 5) { SqlDA = new SqlDataAdapter("SELECT *, RANK() OVER (ORDER BY Fødselsrate DESC) AS Rang FROM Oceanien", Con); }
-                if (comboBox1.SelectedIndex == 6) { SqlDA = new SqlDataAdapter("SELECT *, RANK() OVER (ORDER BY Fødselsrate DESC) AS Rang FROM Sydamerika", Con); }
+                if (comboBox1.SelectedIndex == 0) { SqlDA = new SQLiteDataAdapter("SELECT *, RANK() OVER (ORDER BY Fødselsrate DESC) AS Rang FROM Africa", Con); } //if you selected "Africa" in the drop down menu, then all the entries in the "Africa" table will be selected, and ranked by descending birthrates
+                if (comboBox1.SelectedIndex == 1) { SqlDA = new SQLiteDataAdapter("SELECT *, RANK() OVER (ORDER BY Fødselsrate DESC) AS Rang FROM Asien", Con); }
+                if (comboBox1.SelectedIndex == 2) { SqlDA = new SQLiteDataAdapter("SELECT *, RANK() OVER (ORDER BY Fødselsrate DESC) AS Rang FROM Europa", Con); }
+                if (comboBox1.SelectedIndex == 3) { SqlDA = new SQLiteDataAdapter("SELECT *, RANK() OVER (ORDER BY Fødselsrate DESC) AS Rang FROM Mellemamerika", Con); }
+                if (comboBox1.SelectedIndex == 4) { SqlDA = new SQLiteDataAdapter("SELECT *, RANK() OVER (ORDER BY Fødselsrate DESC) AS Rang FROM Nordamerika", Con); }
+                if (comboBox1.SelectedIndex == 5) { SqlDA = new SQLiteDataAdapter("SELECT *, RANK() OVER (ORDER BY Fødselsrate DESC) AS Rang FROM Oceanien", Con); }
+                if (comboBox1.SelectedIndex == 6) { SqlDA = new SQLiteDataAdapter("SELECT *, RANK() OVER (ORDER BY Fødselsrate DESC) AS Rang FROM Sydamerika", Con); }
 
                 DataTable DT = new DataTable(); 
                 SqlDA.Fill(DT);

@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
+using System.Data.SQLite;
 
 namespace GeoTema
 {
@@ -26,7 +26,7 @@ namespace GeoTema
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e) { }
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e) { }
 
-        SqlConnection Con_fødselsrate_2017 = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\OneDrive - TEC\2.EUX\5.PF2\Opgave 3(C# + Database)\GeoTema_project\GeoTema\GeoTema\fødselsrate_2017.mdf;Integrated Security=True");
+        SQLiteConnection Con_fødselsrate_2017 = new SQLiteConnection(@"Data Source=.\fødselsrate_2017.db;Version=3");
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -34,15 +34,15 @@ namespace GeoTema
             {
                 Con_fødselsrate_2017.Close();
                 Con_fødselsrate_2017.Open();
-                SqlDataAdapter SqlDA = new SqlDataAdapter();
+                SQLiteDataAdapter SqlDA = new SQLiteDataAdapter();
 
-                if (comboBox1.SelectedIndex == 0) { SqlDA = new SqlDataAdapter("SELECT *, RANK() OVER (ORDER BY Fødselsrate DESC) AS Rang FROM Africa", Con_fødselsrate_2017); }
-                if (comboBox1.SelectedIndex == 1) { SqlDA = new SqlDataAdapter("SELECT *, RANK() OVER (ORDER BY Fødselsrate DESC) AS Rang FROM Asien", Con_fødselsrate_2017); }
-                if (comboBox1.SelectedIndex == 2) { SqlDA = new SqlDataAdapter("SELECT *, RANK() OVER (ORDER BY Fødselsrate DESC) AS Rang FROM Europa", Con_fødselsrate_2017); }
-                if (comboBox1.SelectedIndex == 3) { SqlDA = new SqlDataAdapter("SELECT *, RANK() OVER (ORDER BY Fødselsrate DESC) AS Rang FROM Mellemamerika", Con_fødselsrate_2017); }
-                if (comboBox1.SelectedIndex == 4) { SqlDA = new SqlDataAdapter("SELECT *, RANK() OVER (ORDER BY Fødselsrate DESC) AS Rang FROM Nordamerika", Con_fødselsrate_2017); }
-                if (comboBox1.SelectedIndex == 5) { SqlDA = new SqlDataAdapter("SELECT *, RANK() OVER (ORDER BY Fødselsrate DESC) AS Rang FROM Oceanien", Con_fødselsrate_2017); }
-                if (comboBox1.SelectedIndex == 6) { SqlDA = new SqlDataAdapter("SELECT *, RANK() OVER (ORDER BY Fødselsrate DESC) AS Rang FROM Sydamerika", Con_fødselsrate_2017); }
+                if (comboBox1.SelectedIndex == 0) { SqlDA = new SQLiteDataAdapter("SELECT *, RANK() OVER (ORDER BY Fødselsrate DESC) AS Rang FROM Africa", Con_fødselsrate_2017); }
+                if (comboBox1.SelectedIndex == 1) { SqlDA = new SQLiteDataAdapter("SELECT *, RANK() OVER (ORDER BY Fødselsrate DESC) AS Rang FROM Asien", Con_fødselsrate_2017); }
+                if (comboBox1.SelectedIndex == 2) { SqlDA = new SQLiteDataAdapter("SELECT *, RANK() OVER (ORDER BY Fødselsrate DESC) AS Rang FROM Europa", Con_fødselsrate_2017); }
+                if (comboBox1.SelectedIndex == 3) { SqlDA = new SQLiteDataAdapter("SELECT *, RANK() OVER (ORDER BY Fødselsrate DESC) AS Rang FROM Mellemamerika", Con_fødselsrate_2017); }
+                if (comboBox1.SelectedIndex == 4) { SqlDA = new SQLiteDataAdapter("SELECT *, RANK() OVER (ORDER BY Fødselsrate DESC) AS Rang FROM Nordamerika", Con_fødselsrate_2017); }
+                if (comboBox1.SelectedIndex == 5) { SqlDA = new SQLiteDataAdapter("SELECT *, RANK() OVER (ORDER BY Fødselsrate DESC) AS Rang FROM Oceanien", Con_fødselsrate_2017); }
+                if (comboBox1.SelectedIndex == 6) { SqlDA = new SQLiteDataAdapter("SELECT *, RANK() OVER (ORDER BY Fødselsrate DESC) AS Rang FROM Sydamerika", Con_fødselsrate_2017); }
 
                 DataTable DT = new DataTable();
                 SqlDA.Fill(DT);
@@ -58,18 +58,15 @@ namespace GeoTema
             {
                 Con_fødselsrate_2017.Close();
                 Con_fødselsrate_2017.Open();
-                SqlCommand SqlCmd = new SqlCommand();
+                SQLiteCommand SqlCmd = new SQLiteCommand();
 
-                if (comboBox1.SelectedIndex == 0) { SqlCmd = new SqlCommand("INSERT INTO Africa(Land, Fødselsrate) VALUES (@Land, @Fødselsrate);", Con_fødselsrate_2017); }
-                if (comboBox1.SelectedIndex == 1) { SqlCmd = new SqlCommand("INSERT INTO Asien(Land, Fødselsrate) VALUES (@Land, @Fødselsrate);", Con_fødselsrate_2017); }
-                if (comboBox1.SelectedIndex == 2) { SqlCmd = new SqlCommand("INSERT INTO Europa(Land, Fødselsrate) VALUES (@Land, @Fødselsrate);", Con_fødselsrate_2017); }
-                if (comboBox1.SelectedIndex == 3) { SqlCmd = new SqlCommand("INSERT INTO Mellemamerika(Land, Fødselsrate) VALUES (@Land, @Fødselsrate);", Con_fødselsrate_2017); }
-                if (comboBox1.SelectedIndex == 4) { SqlCmd = new SqlCommand("INSERT INTO Nordamerika(Land, Fødselsrate) VALUES (@Land, @Fødselsrate);", Con_fødselsrate_2017); }
-                if (comboBox1.SelectedIndex == 5) { SqlCmd = new SqlCommand("INSERT INTO Oceanien(Land, Fødselsrate) VALUES (@Land, @Fødselsrate);", Con_fødselsrate_2017); }
-                if (comboBox1.SelectedIndex == 6) { SqlCmd = new SqlCommand("INSERT INTO Sydamerika(Land, Fødselsrate) VALUES (@Land, @Fødselsrate);", Con_fødselsrate_2017); }
-
-                SqlCmd.Parameters.Add("@Land", textBox1.Text);
-                SqlCmd.Parameters.Add("@Fødselsrate", textBox2.Text);
+                if (comboBox1.SelectedIndex == 0) { SqlCmd = new SQLiteCommand("INSERT INTO Africa(Land, Fødselsrate) VALUES ('" + textBox1.Text + "', '" + textBox2.Text + "');", Con_fødselsrate_2017); }
+                if (comboBox1.SelectedIndex == 1) { SqlCmd = new SQLiteCommand("INSERT INTO Asien(Land, Fødselsrate) VALUES ('" + textBox1.Text + "', '" + textBox2.Text + "');", Con_fødselsrate_2017); }
+                if (comboBox1.SelectedIndex == 2) { SqlCmd = new SQLiteCommand("INSERT INTO Europa(Land, Fødselsrate) VALUES ('" + textBox1.Text + "', '" + textBox2.Text + "');", Con_fødselsrate_2017); }
+                if (comboBox1.SelectedIndex == 3) { SqlCmd = new SQLiteCommand("INSERT INTO Mellemamerika(Land, Fødselsrate) VALUES ('" + textBox1.Text + "', '" + textBox2.Text + "');", Con_fødselsrate_2017); }
+                if (comboBox1.SelectedIndex == 4) { SqlCmd = new SQLiteCommand("INSERT INTO Nordamerika(Land, Fødselsrate) VALUES ('" + textBox1.Text + "', '" + textBox2.Text + "');", Con_fødselsrate_2017); }
+                if (comboBox1.SelectedIndex == 5) { SqlCmd = new SQLiteCommand("INSERT INTO Oceanien(Land, Fødselsrate) VALUES ('" + textBox1.Text + "', '" + textBox2.Text + "');", Con_fødselsrate_2017); }
+                if (comboBox1.SelectedIndex == 6) { SqlCmd = new SQLiteCommand("INSERT INTO Sydamerika(Land, Fødselsrate) VALUES ('" + textBox1.Text + "', '" + textBox2.Text + "');", Con_fødselsrate_2017); }
 
                 object obj = SqlCmd.ExecuteNonQuery();
                 textBox1.Clear();
